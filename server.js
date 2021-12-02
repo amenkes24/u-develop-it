@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Connect to database
-// Connect to database
 const db = mysql.createConnection(
   {
     host: "localhost",
@@ -40,7 +39,7 @@ app.get("/api/candidates", (req, res) => {
 });
 
 // GET a single candidates
-app.get("/api/candidate/:id", (req, res) => {
+app.get('/api/candidate/:id', (req, res) => {
   const sql = `SELECT * FROM candidates WHERE id = ?`;
   const params = [req.params.id];
 
